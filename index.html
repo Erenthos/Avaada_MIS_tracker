@@ -28,6 +28,13 @@
             color: #333;
         }
 
+        th {
+        position: sticky; /* Make header sticky */
+        top: 0; /* Position it at the top */
+        background-color: #fff; /* Background color for the sticky header */
+        z-index: 10; /* Ensure it appears above other content */
+    }
+
         /* Adjusting the table styles */
         table.dataTable tbody tr:hover {
             background-color: #f1f1f1;
