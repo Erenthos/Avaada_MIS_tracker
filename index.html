@@ -84,6 +84,24 @@
 </div>
        
 
+// Function to update the project title and background color based on the selected project
+function updateProjectTitle() {
+    const projectTitle = document.getElementById('projectSelect').value;
+    document.getElementById('projectTitle').innerText = projectTitle + ' Status Tracker';
+
+    // Define background colors for each project
+    const projectColors = {
+        "Green Ammonia Project": "#A8DADC",
+        "Green Methanol Derivatives": "#F4A261",
+        "PSP - Chichlik": "#E76F51",
+        "PSP - Pawana Falyan": "#2A9D8F",
+        "IT": "#264653",
+        "Manufacturing Unit - Butibori": "#E9C46A"
+    };
+
+    // Change the background color based on the selected project
+    document.body.style.backgroundColor = projectColors[projectTitle] || "#f4f4f4"; // Default color if none match
+}
 
       
         <button id="fetchDataButton" class="btn btn-primary" onclick="fetchData()">Load Data</button>
