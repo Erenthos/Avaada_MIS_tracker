@@ -142,10 +142,19 @@
                             return;
                         }
                         
-                        const recommendedVendors = row[5] ? row[5].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : '';
+                       /*const recommendedVendors = row[5] ? row[5].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : '';
                         const responseReceived = row[6] ? row[6].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : '';
                         const technicalCleared = row[7] ? row[7].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : '';
-                        const commercialProposalStatus = row[8] ? row[8].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : '';
+                        const commercialProposalStatus = row[8] ? row[8].split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join('') : ''; */
+
+const recommendedVendors = (row[5] && typeof row[5] === 'string') ? row[5].toString().split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join(''): '';
+
+const responseReceived = (row[6] && typeof row[6] === 'string') ? row[6].toString().split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join(''): '';
+
+const technicalCleared = (row[7] && typeof row[7] === 'string') ? row[7].toString().split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join(''): '';
+
+const commercialProposalStatus = (row[8] && typeof row[8] === 'string') ? row[8].toString().split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join(''): '';
+
 
                         tableRows += `
                             <tr>
