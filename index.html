@@ -126,7 +126,17 @@
                     const tableBody = document.getElementById('procurementData');
                 
                     const rows = data.values;
+                    
+                     if (rows) {
+                    // Display the first row (header)
+                    let headerRow = '<tr>';
+                    rows[0].forEach(header => {
+                        headerRow += `<th>${header}</th>`;
+                    });
+                    headerRow += '</tr>';
+                    tableHeader.innerHTML = headerRow;
 
+                         
                     if (rows) { // Check if rows exist
                         let tableRows = '';
                         // Skip the first row (headers) since we already have the header in HTML
