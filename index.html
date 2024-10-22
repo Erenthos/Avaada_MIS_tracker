@@ -178,6 +178,11 @@
             });
     }
 
+
+    document.addEventListener('DOMContentLoaded', () => {
+    // Call this function to set the initial title on page load
+    updateProjectTitle();
+});
     // Function to update the project title based on the selected project
     function updateProjectTitle() {
         const projectTitle = document.getElementById('projectSelect').value;
