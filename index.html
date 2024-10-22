@@ -73,14 +73,19 @@
             </select>
         </div>
         
-        <!-- Background Color Picker -->
-        <div class="form-group">
-            <label for="bgColorPicker">Change Background Color:</label>
-            <input type="color" id="bgColorPicker" class="form-control" style="width: 50 px;" onchange="changeBackgroundColor()">
-
-       
-        </div>
+      
         
+
+<div class="form-group">
+    <label for="bgColorPicker">Change Background Color:</label>
+    <div class="col-2"> <!-- Adjust column size as needed -->
+        <input type="color" id="bgColorPicker" class="form-control" onchange="changeBackgroundColor()">
+    </div>
+</div>
+       
+
+
+      
         <button id="fetchDataButton" class="btn btn-primary" onclick="fetchData()">Load Data</button>
         
         <table id="procurementTable" class="display table table-striped table-bordered">
