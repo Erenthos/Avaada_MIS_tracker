@@ -127,17 +127,6 @@
                 
                     const rows = data.values;
                     
-if (rows) {
-    // Display the first row (header)
-    let headerRow = '<tr>';
-    rows[0].forEach(header => {
-        headerRow += `<th>${header}</th>`;  // Ensure the syntax here is correct
-    });
-    headerRow += '</tr>';
-    tableHeader.innerHTML = headerRow;
-}
-
-
                          
                     if (rows) { // Check if rows exist
                         let tableRows = '';
