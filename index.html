@@ -119,7 +119,8 @@
 
     function fetchData() {
         const sheetName = document.getElementById('projectSelect').value;
-        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}?key=${API_KEY}`;
+        const encodedSheetName = encodeURIComponent(sheetName);
+        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${encodedSheetName}?key=${API_KEY}`;
 
         if ($.fn.DataTable.isDataTable('#procurementTable')) {
             $('#procurementTable').DataTable().clear().destroy();
