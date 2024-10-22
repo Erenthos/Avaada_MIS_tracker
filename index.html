@@ -132,6 +132,11 @@
             .then(data => {
                 const tableBody = document.getElementById('procurementData');
                 const rows = data.values;
+
+                 if (index === 0) {
+                        // If this is the header row, continue without processing
+                        return;
+                    }
                 
                 if (rows) {
                     let tableRows = '';
@@ -142,10 +147,7 @@
                             skipFirstRow = false;
                             return;
                         }
-                        if (index === 0) {
-                        // If this is the header row, continue without processing
-                        return;
-                    }
+                       
                         
                        
 const recommendedVendors = (row[5] && typeof row[5] === 'string') ? row[5].toString().split('\n').map(vendor => `<div>${vendor.replace(/^\d+\.\s*/, '').trim()}</div>`).join(''): '';
